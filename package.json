@@ -1,0 +1,22 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "homework-week-10",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaraisonGitHub/liri-node-app.git"
+  },
+  "author": "Tara Baker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TaraisonGitHub/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/TaraisonGitHub/liri-node-app#readme",
+  "dependencies": {
+    "twitter": "^1.7.0"
+  }
+}
