@@ -23,13 +23,13 @@ var movieList = "";
 		twitterTweets();
 		break;
 	case "spotify-this-song":
-		trySpotify();
+		spotifyThis();
 		break;
 	case "movie-this":
 		OMDBMovies();
 		break;
-	case "do-what-it-says"
-		randomFile();
+	case "do-what-it-says":
+		readRandom();
 		break;
 	default:
 		console.log("\nSorry, I didn't understand that. \n \nHere is a list of commands I can understand: \nmovie-this <movie-name> I can tell you about a movie. \nspotify-this-song <song name> I can tell you about a specific song. \nmy-tweets I can return a list of tweets from the user @breakfast_ennui.");
@@ -134,8 +134,8 @@ function twitterTweets () {
 
 }
 //====== Spotify API Call ==============================================================================
-/*
-function trySpotify() {
+
+function spotifyThis() {
 
 	var spotify = require('spotify');
  
@@ -153,10 +153,12 @@ function trySpotify() {
 	});
 
 }
-*/
+
 // ====== DO-WHAT-IT-SAYS-CODE ========================================================================
 
-function randomFile() {
+function readRandom () {
+
+	console.log("hi");
 	//NPM packagef ofor reading and writing files
 	var fs = require('fs');
 
@@ -166,8 +168,6 @@ function randomFile() {
 	fs.readFile("random.txt", 'utf8', function (error,data) {
 
 		console.log(data);
-		//var dataArr = data.split(',');
-		//console.log(dataArr);
 	});
 
 }
