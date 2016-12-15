@@ -23,10 +23,13 @@ var movieList = "";
 		twitterTweets();
 		break;
 	case "spotify-this-song":
-		// function 2
+		trySpotify();
 		break;
 	case "movie-this":
 		OMDBMovies();
+		break;
+	case "do-what-it-says"
+		randomFile();
 		break;
 	default:
 		console.log("\nSorry, I didn't understand that. \n \nHere is a list of commands I can understand: \nmovie-this <movie-name> I can tell you about a movie. \nspotify-this-song <song name> I can tell you about a specific song. \nmy-tweets I can return a list of tweets from the user @breakfast_ennui.");
@@ -68,6 +71,7 @@ function OMDBMovies() {
 }
 
 // ====== Twitter API Call ==========================================================================
+
 //1. Get twitter keys from keys.js:
 
 function twitterTweets () {
@@ -85,61 +89,85 @@ function twitterTweets () {
 
 	  if (!error) {
 
-	    console.log(tweets);
-	  }
-});
+	    console.log(tweets[0].created_at);
+	    console.log(tweets[1].text);
+	    console.log(tweets[1].created_at);
+	    console.log(tweets[1].text);
+	    console.log(tweets[2].created_at);
+	    console.log(tweets[2].text);
+	    console.log(tweets[3].created_at);
+	    console.log(tweets[3].text);
+	    console.log(tweets[4].created_at);
+	    console.log(tweets[4].text);
+	    console.log(tweets[5].created_at);
+	    console.log(tweets[5].text);
+	    console.log(tweets[6].created_at);
+	    console.log(tweets[6].text);
+	    console.log(tweets[7].created_at);
+	    console.log(tweets[7].text);
+	    console.log(tweets[8].created_at);
+	    console.log(tweets[8].text);
+	    console.log(tweets[9].created_at);
+	    console.log(tweets[9].text);
+	    console.log(tweets[10].created_at);
+	    console.log(tweets[10].text);
+	    console.log(tweets[11].created_at);
+	    console.log(tweets[11].text);
+	    console.log(tweets[12].created_at);
+	    console.log(tweets[12].text);
+	    console.log(tweets[13].created_at);
+	    console.log(tweets[13].text);
+	    console.log(tweets[14].created_at);
+	    console.log(tweets[14].text);
+	    console.log(tweets[15].created_at);
+	    console.log(tweets[15].text);
+	    console.log(tweets[16].created_at);
+	    console.log(tweets[16].text);
+	    console.log(tweets[17].created_at);
+	    console.log(tweets[17].text);
+	    console.log(tweets[18].created_at);
+	    console.log(tweets[18].text);
+	    console.log(tweets[19].created_at);
+	    console.log(tweets[19].text);
+	  	}
+	});
 
 }
- // else {
-	//   	console.log("there was an error", "error", error, "response", response.statusCode);
-	  
-	// }
 //====== Spotify API Call ==============================================================================
 /*
-var spotify = require('spotify');
+function trySpotify() {
+
+	var spotify = require('spotify');
  
-spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
-    if ( err ) {
-        console.log('Error occurred: ' + err);
-        return;
-    }
- 
-    // Do something with 'data' 
-});
+	spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
+	    
+		if (!err) {
+
+		}
+	    else if ( err ) {
+	        console.log('Error occurred: ' + err);
+	        return;
+	    }
+	 
+	    // Do something with 'data' 
+	});
+
 }
+*/
+// ====== DO-WHAT-IT-SAYS-CODE ========================================================================
 
+function randomFile() {
+	//NPM packagef ofor reading and writing files
+	var fs = require('fs');
 
+	//this block of code reads movies.txt
+	// it's importatnt to include utf8 parameter or the code will
+	//the conde stores the contenst
+	fs.readFile("random.txt", 'utf8', function (error,data) {
 
+		console.log(data);
+		//var dataArr = data.split(',');
+		//console.log(dataArr);
+	});
 
-
-//================ read a file ====================
-//NPM packagef ofor reading and writing files
-var fs = require('fs');
-
-
-//this block of code reads movies.txt
-// it's importatnt to include utf8 parameter or the code will
-//the conde stores the contenst
-fs.readFile("movies.txt", 'utf8', function (error,data) {
-
-
-	console.log(data);
-
-
-	var dataArr = data.split(',');
-
-
-	console.log(dataArr);
-
-});
-
- //Spotify package on npm
-
-//======= FUNCTIONS ==============================================================================
-
-  }
-
- });
-
- */
- 
+}
